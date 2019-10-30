@@ -27,6 +27,9 @@ public class TaskProcessor {
 
 		List<String> input = new ArrayList<String>(Arrays.asList(payload.split(",")));
 
+		System.out.println("input.size" + input.size());
+		
+		
 		TaskLaunchRequest request = new TaskLaunchRequest(url, input, null, null);
 
 		System.out.println("created task launch request ...");
