@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.shifthunter</groupId>
+	<groupId>com.shifthunter.ppmtool</groupId>
 	<artifactId>ppmtool-task-intake</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>PPMTool-Spring-Cloud-M3-Task-Intake</name>
-	<description>Testing Spring Cloud Task Intake</description>
+    <name>PPMTool-Spring-Cloud-M3-Task-Intake</name>
+    <description>PPMTool - Spring Cloud Task Intake</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
