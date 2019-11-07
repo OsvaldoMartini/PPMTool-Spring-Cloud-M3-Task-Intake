@@ -23,7 +23,12 @@ public class TaskProcessor {
 
 		//maven://[groupid]:[artifactid]:jar:[version]
 		//String url = "maven://pluralsight.demo:pluralsight-springcloud-m3-task:jar:0.0.1-SNAPSHOT";
-		String url = "maven://com.shifthunter.ppmtool:ppmtool-task:jar:0.0.1-SNAPSHOT";
+		
+		String javaHome = System.getenv("JAVA_HOME");
+		System.out.println("JAVA_HOME " + javaHome);
+				
+		//String url = "maven://com.shifthunter.ppmtool:ppmtool-task:jar:0.0.1-SNAPSHOT";
+		String url = "maven://com.shifthunter.ppmtool:task-regexp:jar:0.0.1-SNAPSHOT";
 
 		List<String> input = new ArrayList<String>(Arrays.asList(payload.split(",")));
 
