@@ -27,8 +27,8 @@ public class TaskProcessor {
 		String javaHome = System.getenv("JAVA_HOME");
 		System.out.println("JAVA_HOME " + javaHome);
 				
-		//String url = "maven://com.shifthunter.ppmtool:ppmtool-task:jar:0.0.1-SNAPSHOT";
-		String url = "maven://com.shifthunter.ppmtool:task-regexp:jar:0.0.1-SNAPSHOT";
+		String url = "maven://com.shifthunter.ppmtool:ppmtool-task:jar:0.0.1-SNAPSHOT";
+		//String url = "maven://com.shifthunter.ppmtool:task-regexp:jar:0.0.1-SNAPSHOT";
 
 		List<String> input = new ArrayList<String>(Arrays.asList(payload.split(",")));
 
