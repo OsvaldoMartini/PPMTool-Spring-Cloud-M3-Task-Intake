@@ -31,8 +31,15 @@ public class TaskProcessor {
 		
 		String javaHome = System.getenv("JAVA_HOME");
 		System.out.println("JAVA_HOME " + javaHome);
-				
+		
+		String mavenHome = System.getenv("MAVEN_HOME");
+		System.out.println("MAVEN_HOME " + mavenHome);
+		
 		String url = "maven://com.shifthunter.tasks:ppmtool-task:jar:0.0.1-SNAPSHOT";
+		//String url = "classpath://ppmtool-task-0.0.1-SNAPSHOT.jar";
+		//String url = "classpath://com.shifthunter.tasks:ppmtool-task:jar:0.0.1-SNAPSHOT";
+		//String url = "jar:file:/D://Maven-Repo/com/shifthunter/tasks/ppmtool-task/0.0.1-SNAPSHOT/ppmtool-task-0.0.1-SNAPSHOT.jar!/";
+		//URL url = new URL("jar:file:/D://Maven-Repo/com/shifthunter/tasks/ppmtool-task/0.0.1-SNAPSHOT/ppmtool-task-0.0.1-SNAPSHOT.jar!/");
 		//String url = "maven://com.shifthunter.ppmtool:task-regexp:jar:0.0.1-SNAPSHOT";
 
 		List<String> input = new ArrayList<String>(Arrays.asList(payload.split(",")));
