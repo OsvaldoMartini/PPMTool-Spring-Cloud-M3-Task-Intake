@@ -1,5 +1,10 @@
 package com.shifthunter.ppmtool;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.JarURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +32,7 @@ public class TaskProcessor {
 		String javaHome = System.getenv("JAVA_HOME");
 		System.out.println("JAVA_HOME " + javaHome);
 				
-		String url = "maven://com.shifthunter.ppmtool:ppmtool-task:jar:0.0.1-SNAPSHOT";
+		String url = "maven://com.shifthunter.tasks:ppmtool-task:jar:0.0.1-SNAPSHOT";
 		//String url = "maven://com.shifthunter.ppmtool:task-regexp:jar:0.0.1-SNAPSHOT";
 
 		List<String> input = new ArrayList<String>(Arrays.asList(payload.split(",")));
@@ -47,4 +52,24 @@ public class TaskProcessor {
 		this.source.output().send(message);
 	}
 
+	public InputStream getFileFromPath() {
+		InputStream in = null;
+		URL inputURL = null;
+		String inputFile = "jar:file:/D:/Maven-Repo/com/shifthunter/tasks/ppmtool-task/0.0.1-SNAPSHOT/ppmtool-task-0.0.1-SNAPSHOT.jar";
+		if (inputFile.startsWith("jar:")){
+		  try {
+			  inputURL = new URL(inputFile);
+		    JarURLConnection conn = (JarURLConnection)inputURL.openConnection();
+		    return in = conn.getInputStream();
+		  } catch (MalformedURLException e1) {
+		    System.err.println("Malformed input URL: "+inputURL);
+		    return in;
+		  } catch (IOException e1) {
+		    System.err.println("IO error open connection");
+		    return in;
+		  }
+		}
+		return in; 
+	}
+	
 }
