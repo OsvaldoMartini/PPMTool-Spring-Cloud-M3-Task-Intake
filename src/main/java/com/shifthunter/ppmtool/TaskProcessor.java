@@ -46,8 +46,9 @@ public class TaskProcessor {
 
 		System.out.println("input.size" + input.size());
 		
+		String operationName = input.get(input.size()-1);
 		
-		TaskLaunchRequest request = new TaskLaunchRequest(url, input, null, null);
+		TaskLaunchRequest request = new TaskLaunchRequest(url, input, null, null, operationName);
 
 		System.out.println("created task launch request ...");
 

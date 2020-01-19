@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.shifthunter.ppmtool</groupId>
 	<artifactId>ppmtool-task-intake</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-    <name>PPMTool-Spring-Cloud-M3-Task-Intake</name>
-    <description>PPMTool - Spring Cloud Task Intake</description>
+	<name>PPMTool-Spring-Cloud-M3-Task-Intake</name>
+	<description>PPMTool - Spring Cloud Task Intake</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>	
+		<version>1.5.22.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud-dependencies.version>Brixton.SR7</spring-cloud-dependencies.version>
+		<spring-cloud-task.version>1.2.2.RELEASE</spring-cloud-task.version>
+		<spring-cloud-task.version>1.2.2.RELEASE</spring-cloud-task.version>
+		<spring-cloud-deployer.version>1.3.0.RELEASE</spring-cloud-deployer.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -25,8 +36,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-task-starter</artifactId>
-			<version>1.0.1.RELEASE</version>
+			<artifactId>spring-cloud-starter-task</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,8 +54,15 @@
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-task-dependencies</artifactId>
+				<version>${spring-cloud-task.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Brixton.SR6</version>
+				<version>${spring-cloud-dependencies.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
